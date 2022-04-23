@@ -1,10 +1,30 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styles from "../../styles/Feed.module.css";
 import { useRouter } from "next/router";
 import { Toolbar } from "../../components/Toolbar";
 import Head from "next/head";
 
+const events = [
+  {
+    title: 'SmartGirlz in ICT Exhibition and Competition',
+    desc: 'This is an Exhibition and competition event where Girls is secondary schools get an opportunity to present ICT related projects',
+    date: '23th April 2022'
+  },
+  {
+    title: 'Women and girls in science',
+    desc: 'This is the event where girls present different ICT projects and the winning teams are awarded',
+    date: '18th May 2022'
+  },
+  {
+    title: 'Girls in ICT hackerthon',
+    desc: 'come and gain, network, learn by watching, meet your dream mentor, and an opportunity probably',
+    date: '02th June 2022'
+  },
+
+]
+
 export const Feed = ({ pageNumber, articles }) => {
+
   const router = useRouter();
   console.log(articles, pageNumber);
   return (
@@ -18,17 +38,30 @@ export const Feed = ({ pageNumber, articles }) => {
       <div className="page-container">
         <Toolbar />
         <div className={styles.main}>
-          {articles.map((articles, index) => (
-            <div key={index} className={styles.post}>
-              <h1 onClick={() => (window.location.href = articles.url)}>
-                {articles.title}
-              </h1>
-              <p>{articles.description}</p>
-              {!!articles.urlToImage && (
-                <img src={articles.urlToImage} alt="" />
-              )}
-            </div>
-          ))}
+          <div className={styles.post}>
+            <h1 onClick={() => (window.location.href = articles.url)}>
+              {events[0].title}
+            </h1>
+            <p>{events[0].date}</p>
+            <p>{events[0].desc}</p>
+            <img src='/exhibition.jpeg' alt="" />
+          </div>
+          <div className={styles.post}>
+            <h1 onClick={() => (window.location.href = articles.url)}>
+              {events[1].title}
+            </h1>
+            <p>{events[1].date}</p>
+            <p>{events[1].desc}</p>
+            <img src='/pitchevent.jpeg' alt="" />
+          </div>
+          <div className={styles.post}>
+            <h1 onClick={() => (window.location.href = articles.url)}>
+              {events[2].title}
+            </h1>
+            <p>{events[2].date}</p>
+            <p>{events[2].desc}</p>
+            <img src='/hackerthon.jpeg' alt="" />
+          </div>
         </div>
         <div className={styles.paginator}>
           <div
@@ -76,7 +109,7 @@ export const getServerSideProps = async (pageContext) => {
     `https://newsapi.org/v2/top-headlines?country=in&pageSize=5&page=${pageNumber}`,
     {
       headers: {
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_NEWS_KEY}`,
+        Authorization: `Bearer 2c69059d37d440a09fff38a2a9577e81`,
       },
     }
   );

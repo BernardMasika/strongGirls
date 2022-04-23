@@ -48,8 +48,8 @@ export default function Home() {
       <div className="page-container">
         <Toolbar />
         <div className={styles.main}>
-          <h1>Next.js News App</h1>
-          <h3>Your one stop shop for the latest news articles</h3>
+          <h1>We___Strong</h1>
+          <h3>The Home of opportunities</h3>
         </div>
       </div>
     </>

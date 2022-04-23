@@ -3,39 +3,42 @@ import React from "react";
 import { Toolbar } from "../components/Toolbar";
 import styles from "../styles/EOM.module.css";
 
-export const eom = ({ employee }) => {
+export const eom = () => {
   return (
     <>
       <Head>
-        <title>Employee Of The Month - Realtime News</title>
+        <title>Meet the team</title>
         <meta
           name="description"
-          content={`This month's employee of the month is ${employee.name}`}
+          content={`This month's employee of the month is smartgirls`}
         />
 
-        <meta property="og:image" content={employee.image} />
+        {/*<meta property="og:image" content={employee.image} />*/}
         <meta property="og:title" content="Employee Of The Month" />
-        <meta
-          property="og:description"
-          content={`This month's employee of the month is ${employee.name}`}
-        />
+        {/*<meta*/}
+        {/*  property="og:description"*/}
+        {/*  content={`This month's employee of the month is ${employee.name}`}*/}
+        {/*/>*/}
 
-        <meta property="twitter:image" content={employee.image} />
-        <meta property="twitter:title" content="Employee Of The Month" />
-        <meta
-          property="twitter:description"
-          content={`This month's employee of the month is ${employee.name}`}
-        />
+        {/*<meta property="twitter:image" content={employee.image} />*/}
+        {/*<meta property="twitter:title" content="Employee Of The Month" />*/}
+        {/*<meta*/}
+        {/*  property="twitter:description"*/}
+        {/*  content={`This month's employee of the month is ${employee.name}`}*/}
+        {/*/>*/}
       </Head>
       <div className="page-container">
         <Toolbar />
         <div className={styles.main}>
-          <h1>Employee of the Month </h1>
+          <h1>Meet the Team </h1>
           <div className={styles.employeeOfTheMonth}>
-            <h3>{employee.name}</h3>
-            <h6>{employee.position}</h6>
-            <img src={employee.image} alt="" />
-            <p>{employee.description}</p>
+            <h3>Kijitonyama Secondary school</h3>
+            <p>
+              This is a project which is a product of Smartgirls in ICT 2022 <br/>where by we were trying to find solution on how to
+              make girls get access to STEM.
+            </p>
+            <small>Email:</small><h4>SmartGilz@gmail.com</h4>
+            {/*<img src={employee.image} alt="" />*/}
           </div>
         </div>
       </div>
@@ -43,15 +46,15 @@ export const eom = ({ employee }) => {
   );
 };
 
-export const getServerSideProps = async (pageContext) => {
-  const apiResponse = await fetch("https://realtime-news.vercel.app/api");
-  const employee = await apiResponse.json();
-
-  return {
-    props: {
-      employee,
-    },
-  };
-};
+// export const getServerSideProps = async (pageContext) => {
+//   const apiResponse = await fetch("https://realtime-news.vercel.app/api");
+//   const employee = await apiResponse.json();
+//
+//   return {
+//     props: {
+//       employee,
+//     },
+//   };
+// };
 
 export default eom;
