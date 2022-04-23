@@ -37,7 +37,10 @@ export const eom = () => {
               This is a project which is a product of Smartgirls in ICT 2022 <br/>where by we were trying to find solution on how to
               make girls get access to STEM.
             </p>
-            <small>Email:</small><h4>SmartGilz@gmail.com</h4>
+           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+             <small style={{marginRight: 5}}>Email:</small><h4 style={{marginRight: 20}}>SmartGirlz@gmail.com</h4>
+             <small style={{marginRight: 5}}>Phone:</small><h4>0716736160</h4>
+           </div>
             {/*<img src={employee.image} alt="" />*/}
           </div>
         </div>
